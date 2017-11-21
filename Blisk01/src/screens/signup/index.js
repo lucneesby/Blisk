@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   ImageBackground 
 } from 'react-native';
-import { Fonts } from '../../../utils/Fonts';
+import { Fonts } from '../../utils/Fonts';
 
 const background = require('./signup_bg.png');
 const backIcon = require('./back.png');
@@ -176,6 +176,7 @@ let styles = StyleSheet.create({
     marginLeft: 25,
   },
   titleViewText: {
+    fontFamily: Fonts.BakeryFont,
     fontSize: 140,
     color: '#fff',
     textAlign: 'center',
