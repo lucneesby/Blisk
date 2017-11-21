@@ -93,22 +93,6 @@ export default class SignupVriew extends Component {
               />
             </View>
 
-            <View style={styles.inputContainer}>
-              <View style={styles.iconContainer}>
-                <Image 
-                  source={birthdayIcon} 
-                  style={styles.inputIcon} 
-                  resizeMode="contain"
-                />
-              </View>
-              <TextInput
-                style={[styles.input, styles.whiteFont]}
-                placeholder="Birthday"
-                placeholderTextColor="#FFF"
-                underlineColorAndroid='transparent' 
-              />
-            </View>
-
           </View>
 
           <View style={styles.footerContainer}>
