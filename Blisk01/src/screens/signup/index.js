@@ -15,7 +15,6 @@ const backIcon = require('./back.png');
 const personIcon = require('./signup_person.png');
 const lockIcon = require('./signup_lock.png');
 const emailIcon = require('./signup_email.png');
-const birthdayIcon = require('./signup_birthday.png');
 
 export default class SignupVriew extends Component {
   render() {
@@ -119,15 +118,7 @@ let styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  container1: {
-    flex: 1,
-  },
   bg: {
-    paddingTop: 30,
-    width: null,
-    height: null
-  },
-  bg1: {
     paddingTop: 30,
     width: null,
     height: null
@@ -136,7 +127,7 @@ let styles = StyleSheet.create({
     flex: 1,
   },
   inputsContainer: {
-    flex: 3,
+    flex: 2,
     marginTop: 50,
   },
   footerContainer: {
@@ -156,7 +147,6 @@ let styles = StyleSheet.create({
   },
   headerTitleView: {
     backgroundColor: 'transparent',
-    marginTop: 25,
     marginLeft: 25,
   },
   titleViewText: {
@@ -164,17 +154,18 @@ let styles = StyleSheet.create({
     fontSize: 140,
     color: '#fff',
     textAlign: 'center',
-    paddingVertical: -22
+    height: 200
   },
   inputs: {
     paddingVertical: 20,
   },
   inputContainer: {
-    borderWidth: 1,
+    padding: 10,
+    borderWidth: 2,
     borderBottomColor: '#CCC',
     borderColor: 'transparent',
     flexDirection: 'row',
-    height: 75,
+    height: 80,
   },
   iconContainer: {
     paddingHorizontal: 15,
