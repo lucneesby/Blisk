@@ -6,7 +6,7 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
-  ImageBackground 
+  ImageBackground
 } from 'react-native';
 import { Fonts } from '../../utils/Fonts';
 
