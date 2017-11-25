@@ -8,8 +8,10 @@ import {
   Dimensions,
   TextInput,
   Button,
-  TouchableOpacity
+  TouchableOpacity,
+  ImageBackground
 } from 'react-native';
+import { Fonts } from '../../utils/Fonts';
 
 const { width, height } = Dimensions.get('window');
 
@@ -18,13 +20,14 @@ const mark = require('./login1_mark.png');
 const lockIcon = require('./login1_lock.png');
 const personIcon = require('./login1_person.png');
 
+
 export default class LoginScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image source={background} style={styles.background} resizeMode="cover">
-          <View style={styles.markWrap}>
-            <Image source={mark} style={styles.mark} resizeMode="contain" />
+        <ImageBackground source={background} style={styles.background} resizeMode="cover">
+          <View style={styles.headerTitleView}>
+            <Text style={styles.titleViewText}>Blisk</Text>
           </View>
           <View style={styles.wrapper}>
             <View style={styles.inputWrap}>
@@ -34,7 +37,7 @@ export default class LoginScreen extends Component {
               <TextInput 
                 placeholder="Username" 
                 placeholderTextColor="#FFF"
-                style={styles.input} 
+                style={[styles.input, styles.whiteFont]} 
               />
             </View>
             <View style={styles.inputWrap}>
@@ -44,16 +47,16 @@ export default class LoginScreen extends Component {
               <TextInput 
                 placeholderTextColor="#FFF"
                 placeholder="Password" 
-                style={styles.input} 
+                style={[styles.input, styles.whiteFont]} 
                 secureTextEntry 
               />
             </View>
-            <TouchableOpacity activeOpacity={.5}>
+            <TouchableOpacity activeOpacity={0.5}>
               <View>
                 <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity activeOpacity={.5}>
+            <TouchableOpacity activeOpacity={0.5}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Sign In</Text>
               </View>
@@ -62,14 +65,14 @@ export default class LoginScreen extends Component {
           <View style={styles.container}>
             <View style={styles.signupWrap}>
               <Text style={styles.accountText}>Don't have an account?</Text>
-              <TouchableOpacity activeOpacity={.5}>
+              <TouchableOpacity activeOpacity={0.5}>
                 <View>
                   <Text style={styles.signupLinkText}>Sign Up</Text>
                 </View>
               </TouchableOpacity>
             </View>
           </View>
-        </Image>
+        </ImageBackground>
       </View>
     );
   }
@@ -79,9 +82,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  markWrap: {
-    flex: 1,
-    paddingVertical: 30,
+  headerTitleView: {
+    backgroundColor: 'transparent',
+    marginLeft: 25,
+  },
+  titleViewText: {
+    fontFamily: Fonts.BakeryFont,
+    fontSize: 140,
+    color: '#fff',
+    textAlign: 'center',
+    height: 200,
+    paddingVertical: 35
   },
   mark: {
     width: null,
@@ -144,5 +155,8 @@ const styles = StyleSheet.create({
   signupLinkText: {
     color: "#FFF",
     marginLeft: 5,
+  },
+  whiteFont: {
+    color: '#FFF'
   }
 });

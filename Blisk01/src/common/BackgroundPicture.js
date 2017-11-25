@@ -7,7 +7,10 @@ export default class BackgroundPicture extends Component {
 		render() {
 			return (
 				<View style={styles.container}>
-					<Image source={background} resizeMode='cover' style={[styles.container, styles.bg]} />
+					<ImageBackground 
+						source={background} resizeMode='cover' 
+						style={[styles.container, styles.bg]} 
+					/>
 				</View>
 			);
 		}

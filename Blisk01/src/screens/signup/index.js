@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   ImageBackground
 } from 'react-native';
+import firebase from 'firebase';
 import { Fonts } from '../../utils/Fonts';
 
 const background = require('./signup_bg.png');
@@ -16,7 +17,13 @@ const personIcon = require('./signup_person.png');
 const lockIcon = require('./signup_lock.png');
 const emailIcon = require('./signup_email.png');
 
-export default class SignupVriew extends Component {
+export default class SignupView extends Component {
+  state = { email: '', password: '', name: '' };
+
+  onButtonPress() {
+    const { email, password, name } = this.state;
+    firebase.auth().SignInWithEmailAndPassword(email, password, name);
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -72,6 +79,8 @@ export default class SignupVriew extends Component {
               <TextInput
                 style={[styles.input, styles.whiteFont]}
                 placeholder="Email"
+                value={this.state.email}
+                onChangeText={email => this.setState({ email })}
                 placeholderTextColor="#FFF" 
               />
             </View>
@@ -88,6 +97,8 @@ export default class SignupVriew extends Component {
                 secureTextEntry
                 style={[styles.input, styles.whiteFont]}
                 placeholder="Password"
+                value={this.state.password}
+                onChangeText={password => this.setState({ password })}
                 placeholderTextColor="#FFF" 
               />
             </View>
@@ -96,7 +107,7 @@ export default class SignupVriew extends Component {
 
           <View style={styles.footerContainer}>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={this.onButtonPress.bind(this)}>
               <View style={styles.signup}>
                 <Text style={styles.whiteFont}>Join</Text>
               </View>
